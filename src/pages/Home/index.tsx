@@ -2,8 +2,9 @@ import { Header } from '../../components/Header/header'
 import { Intro, Title, Description, Imagem } from './styles'
 import coffee from '../../assets/coffee.svg'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import { TagItem } from './components/Tags/Tags'
+import { TagItem } from './components/Tags'
 import { defaultTheme } from '../../styles/themes/default'
+import { CoffeeList } from './components/CoffeList'
 
 export function Home() {
   return (
@@ -42,6 +43,7 @@ export function Home() {
           backgroundColor={defaultTheme.purple}
         />
       </Intro>
+      <CoffeeList />
     </>
   )
 }
