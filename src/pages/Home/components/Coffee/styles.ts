@@ -11,7 +11,7 @@ export const Container = styled.div`
   gap: 32px;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -45,5 +45,60 @@ export const Container = styled.div`
     }
   }
 
+  article {
+    display: flex;
+    font-family: 'Baloo', sans-serif;
+    font-size: 24px;
+    color: ${(props) => props.theme['base-text']};
 
+    div {
+      display: flex;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    input {
+      width: 32px;
+    }
+  }
+
+  button {
+    background: ${(props) => props.theme['base-button']};
+    border-radius: 8px;
+    border: none;
+    width: 36px;
+    height: 36px;
+    background-color: ${(props) => props.theme['purple-dark']};
+    color: ${(props) => props.theme.white};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+  }
+`
+export const Action = styled.div`
+  background: ${(props) => props.theme['base-button']};
+  border-radius: 8px;
+
+  input {
+    background-color: ${(props) => props.theme['base-button']};
+    border: none;
+  }
+
+  button {
+    border: none;
+    width: 32px;
+    height: 32px;
+    background: ${(props) => props.theme['base-button']};
+    border-radius: 8px;
+    color: ${(props) => props.theme.purple};
+  }
+`
+export const Price = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin: 3px;
 `
