@@ -26,10 +26,23 @@ export function Home() {
           text={'Compra simples e segura'}
           backgroundColor={defaultTheme['yellow-dark']}
         />
-        <TagItem icon={Package} text={'Embalagem mantém o café intacto'} />
-        <TagItem icon={Timer} text={'Entrega rápida e rastreada'} />
-        <TagItem icon={Coffee} text={'O café chega fresquinho até você'} />
+        <TagItem
+          icon={Package}
+          text={'Embalagem mantém o café intacto'}
+          backgroundColor={defaultTheme['base-text']}
+        />
+        <TagItem
+          icon={Timer}
+          text={'Entrega rápida e rastreada'}
+          backgroundColor={defaultTheme.yellow}
+        />
+        <TagItem
+          icon={Coffee}
+          text={'O café chega fresquinho até você'}
+          backgroundColor={defaultTheme.purple}
+        />
       </Intro>
+      <CoffeeList />
     </>
   )
 }

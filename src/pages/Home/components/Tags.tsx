@@ -14,7 +14,7 @@ export function TagItem({
   return (
     <Container>
       <IconContainer>
-        <Icon style={{ backgroundColor: backgroundColor }} />
+        <Icon style={{ backgroundColor }} color="white" />
       </IconContainer>
       <p>{text}</p>
     </Container>

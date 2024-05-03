@@ -33,3 +33,7 @@ export const TagItem = styled.div`
   gap: 0.5rem;
   grid-area: tags;
 `
+
+export const CoffeeList = styled.div`
+
+`
