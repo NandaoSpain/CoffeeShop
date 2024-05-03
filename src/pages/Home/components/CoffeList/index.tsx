@@ -6,6 +6,20 @@ export function CoffeeList() {
     <Container>
       <CoffeeCard />
       <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
+      <CoffeeCard />
     </Container>
   )
 }

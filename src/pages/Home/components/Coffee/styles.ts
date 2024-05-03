@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   display: flex;
   gap: 32px;
+  margin-bottom: 32px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -20,7 +21,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: -32px;
+    margin-top: -52px;
 
     p {
       color: ${(props) => props.theme['yellow-dark']};

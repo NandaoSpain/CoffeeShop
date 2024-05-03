@@ -1,5 +1,5 @@
 import { Header } from '../../components/Header/header'
-import { Intro, Title, Description, Imagem } from './styles'
+import { Intro, Title, Description, Imagem, Presentation } from './styles'
 import coffee from '../../assets/coffee.svg'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { TagItem } from './components/Tags'
@@ -43,6 +43,7 @@ export function Home() {
           backgroundColor={defaultTheme.purple}
         />
       </Intro>
+      <Presentation><h1>Nossos cafés</h1></Presentation>
       <CoffeeList />
     </>
   )

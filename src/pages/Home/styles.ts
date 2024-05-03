@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Presentation = styled.div`
+  width: 80%;
+  display: flex;
+  padding-top: 150px;
+  margin: 0 auto;
+`
+
 export const Intro = styled.div`
   display: grid;
   width: 80%;
@@ -12,15 +19,26 @@ export const Intro = styled.div`
 `
 
 export const Title = styled.div`
-  padding: 20px;
   grid-area: title;
   white-space: nowrap;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: ${(props) => props.theme['base-title']};
+    line-height: 1.1;
+  }
 `
 
 export const Description = styled.div`
-  padding: 20px;
   grid-area: subtitle;
   white-space: nowrap;
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: ${(props) => props.theme['base-subtitle']};
+  }
 `
 
 export const Imagem = styled.div`
