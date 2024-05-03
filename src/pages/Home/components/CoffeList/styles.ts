@@ -4,8 +4,10 @@ export const Container = styled.div`
   width: 80%;
   min-height: 1200px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   flex-direction: column;
-  align-items: center;
-  background-color: ${(props) => props.theme.purple};
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin-top: 50px;
 `
