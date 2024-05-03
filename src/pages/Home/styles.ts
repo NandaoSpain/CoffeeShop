@@ -35,5 +35,15 @@ export const TagItem = styled.div`
 `
 
 export const CoffeeList = styled.div`
+  display: flex;
+  height: 80px;
+  width: 80px;
+  background: red;
+`
 
+export const CoffeeItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: red;
 `
