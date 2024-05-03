@@ -1,15 +1,21 @@
-import { Container } from './styles'
+import { Container, IconContainer } from './styles'
 
 interface TagItensContainer {
   icon: React.ComponentType<any>
   text: string
-  className: string
+  backgroundColor?: string
 }
 
-export function TagItem({ icon: Icon, text, className }: TagItensContainer) {
+export function TagItem({
+  icon: Icon,
+  text,
+  backgroundColor,
+}: TagItensContainer) {
   return (
-    <Container className={className}>
-      <Icon />
+    <Container>
+      <IconContainer>
+        <Icon style={{ backgroundColor: backgroundColor }} />
+      </IconContainer>
       <p>{text}</p>
     </Container>
   )
