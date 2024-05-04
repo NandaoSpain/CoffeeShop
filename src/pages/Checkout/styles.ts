@@ -13,6 +13,7 @@ export const Container = styled.div`
     font-weight: 700;
     color: ${(props) => props.theme['base-subtitle']};
     margin-bottom: 15px;
+    margin-top: 32px;
   }
 `
 
@@ -86,6 +87,52 @@ export const Payment = styled.div`
   height: 207px;
   margin-top: 12px;
   border-radius: 6px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  & > div {
+    color: ${(props) => props.theme['base-subtitle']};
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+
+    span {
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      color: ${(props) => props.theme['base-text']};
+    }
+  }
+
+  button {
+    background: ${(props) => props.theme['base-button']};
+    color: ${(props) => props.theme['base-button-text']};
+    border-radius: 4px;
+    padding: 8px;
+    margin: 8px 4px;
+    width: 180px;
+    height: 51px;
+    font-size: 8px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: ${(props) => props.theme['base-hover']};
+    }
+
+    &:active {
+      background: ${(props) => props.theme['purple-light']};
+    }
+  }
 `
 
 export const Bag = styled.div`
