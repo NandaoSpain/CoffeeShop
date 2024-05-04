@@ -47,6 +47,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 5px;
+    cursor: pointer;
   }
 `
 
@@ -85,11 +86,6 @@ export const Action = styled.div`
   background: ${(props) => props.theme['base-button']};
   border-radius: 8px;
 
-  input {
-    background-color: ${(props) => props.theme['base-button']};
-    border: none;
-  }
-
   button {
     border: none;
     width: 32px;
@@ -97,8 +93,21 @@ export const Action = styled.div`
     background: ${(props) => props.theme['base-button']};
     border-radius: 8px;
     color: ${(props) => props.theme.purple};
+    cursor: pointer;
   }
 `
+export const Input = styled.input`
+  background-color: ${(props) => props.theme['base-button']};
+  border: none;
+  text-align: right;
+  appearance: none;
+  pointer-events: none;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  color: ${(props) => props.theme['base-title']};
+`
+
 export const Price = styled.div`
   display: flex;
   align-items: baseline;
