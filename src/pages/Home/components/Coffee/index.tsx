@@ -6,6 +6,7 @@ export function CoffeeCard({ coffee }: any) {
   const { name, description, price, image } = coffee
 
   const [quantity, setQuantity] = useState(1)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [bag, setBag] = useState<{ coffee: any; quantity: number }[]>([])
 
   const handleDecrement = () => {

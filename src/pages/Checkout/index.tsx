@@ -1,4 +1,4 @@
-import {MapPinLine } from 'phosphor-react'
+import { MapPinLine } from 'phosphor-react'
 import { Header } from '../../components/Header/header'
 import { Container, Address, Payment, Bag } from './styles'
 
