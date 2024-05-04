@@ -16,36 +16,6 @@ export const Container = styled.div`
   padding: 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  aside {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: -52px;
-
-    p {
-      color: ${(props) => props.theme['yellow-dark']};
-      font-family: 'Roboto', sans-serif;
-      font-size: 10px;
-      background-color: ${(props) => props.theme['yellow-light']};
-      padding: 6px 12px;
-      border-radius: 16px;
-      margin: 8px;
-    }
-
-    strong {
-      font-family: 'Baloo 2', sans-serif;
-      font-size: 20px;
-      color: ${(props) => props.theme['base-title']};
-    }
-
-    span {
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      color: ${(props) => props.theme['base-label']};
-    }
-  }
-
   article {
     display: flex;
     font-family: 'Baloo', sans-serif;
@@ -79,6 +49,38 @@ export const Container = styled.div`
     margin-left: 5px;
   }
 `
+
+export const Aside = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -52px;
+  min-height: 100px;
+
+  p {
+    color: ${(props) => props.theme['yellow-dark']};
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    background-color: ${(props) => props.theme['yellow-light']};
+    padding: 6px 12px;
+    border-radius: 16px;
+    margin: 8px;
+  }
+
+  strong {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    color: ${(props) => props.theme['base-title']};
+  }
+
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: ${(props) => props.theme['base-label']};
+  }
+`
+
 export const Action = styled.div`
   background: ${(props) => props.theme['base-button']};
   border-radius: 8px;

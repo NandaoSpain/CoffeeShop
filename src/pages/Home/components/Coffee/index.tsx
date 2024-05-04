@@ -1,31 +1,32 @@
 import { ShoppingCart } from 'phosphor-react'
-import { Action, Container, Price } from './styles'
-import expressoTradicional from '../../../../assets/expressoTradicional.svg'
+import { Action, Aside, Container, Price } from './styles'
 
-export function CoffeeCard() {
+export function CoffeeCard({ coffee }: any) {
+  const { name, description, price, image } = coffee
+
   return (
     <Container>
-      <aside>
-        <img src={expressoTradicional} alt="" />
-        <p>TRADICIONAL</p>
-        <strong>Expresso Tradicional</strong>
-        <span>O tradicional café feito com água quente e grãos moídos</span>
-      </aside>
+      <Aside>
+        <img src={image} alt={name} />
+        <p>{name}</p>
+        <strong>{name}</strong>
+        <span>{description}</span>
+      </Aside>
       <article>
         <div>
           <Price>
             <span>R$</span>
-            <strong>9.90</strong>
+            <strong>{price.toFixed(2)}</strong>
           </Price>
           <Action>
-            <button /*</div>onClick={handleDecrement}*/>-</button>
+            <button /* onClick={handleDecrement} */>-</button>
             <input
               type="number"
               min="1"
-              //value={}
-              //onChange={(e) => setQuantity(parseInt(e.target.value))}
+              // value={}
+              // onChange={(e) => setQuantity(parseInt(e.target.value))}
             />
-            <button /*onClick={handleIncrement}*/>+</button>
+            <button /* onClick={handleIncrement} */>+</button>
           </Action>
           <button>
             <ShoppingCart />

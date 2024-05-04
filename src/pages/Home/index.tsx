@@ -43,7 +43,9 @@ export function Home() {
           backgroundColor={defaultTheme.purple}
         />
       </Intro>
-      <Presentation><h1>Nossos cafés</h1></Presentation>
+      <Presentation>
+        <h1>Nossos cafés</h1>
+      </Presentation>
       <CoffeeList />
     </>
   )

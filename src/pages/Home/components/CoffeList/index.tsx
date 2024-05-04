@@ -1,25 +1,13 @@
 import { CoffeeCard } from '../Coffee'
 import { Container } from './styles'
+import { coffees } from '../Coffee/coffees'
 
 export function CoffeeList() {
   return (
     <Container>
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
-      <CoffeeCard />
+      {coffees.map((coffee) => (
+        <CoffeeCard key={coffee.id} coffee={coffee} />
+      ))}
     </Container>
   )
 }
