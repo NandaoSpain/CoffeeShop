@@ -1,12 +1,11 @@
 import { Trash } from 'phosphor-react'
 import { Container } from './styles'
 import { Aside } from '../Coffee/styles'
-import cafe from '../../assets/cafe1.svg'
 export interface Coffee {
-  image?: string
-  name?: string
+  image: string
+  name: string
   id?: number
-  price?: number
+  price: number
   description?: string
 }
 
@@ -16,14 +15,14 @@ export function Coffeebuyed({ item }: { item: Coffee }) {
   return (
     <Container>
       <Aside>
-        <img src={cafe} alt={name} className="imgBuyed" />
+        <img src={image} alt={name} className="imgBuyed" />
       </Aside>
       <article>
         <div className="title">
-          <p>Expresso Tradicional</p>
+          <p>{name}</p>
           <div>
             <span>R$</span>
-            <strong>9,90</strong>
+            <strong>{price}</strong>
           </div>
         </div>
         <div>
