@@ -8,9 +8,9 @@ import {
 import { Header } from '../../components/Header/header'
 import { Container, Address, Payment, Bag, TotalPrice } from './styles'
 import { useContext } from 'react'
-import { Coffee, Coffeebuyed } from '../../components/CoffeBuyed'
+import { Coffeebuyed } from '../../components/CoffeBuyed'
 import { v4 as uuidv4 } from 'uuid'
-import { MyContext } from '../../contexts/MyContext'
+import { Coffee, MyContext } from '../../contexts/MyContext'
 export function Checkout() {
   const { bag, setBag } = useContext(MyContext)
   return (

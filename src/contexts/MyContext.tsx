@@ -1,20 +1,33 @@
 import { ReactNode, createContext, useState } from 'react'
 
+export interface Coffee {
+  image: string
+  name: string
+  id?: number
+  price: number
+  description?: string
+}
+
 interface MyContextProviderProps {
   children: ReactNode
-  bag: [object]
-  setBag: () => void
-  quantity: number
-  setQuantity: () => void
 }
-export const MyContext = createContext({} as MyContextProviderProps)
+
+interface MyContextValue {
+  bag: Coffee
+  setBag: (bag: Coffee) => void
+  quantity: number
+  setQuantity: (quantity: number) => void
+}
+
+export const MyContext = createContext({} as MyContextValue)
 
 export function MyContextProvider({ children }: MyContextProviderProps) {
-  const [bag, setBag] = useState([])
+  const [bag, setBag] = useState<Coffee[]>([])
   const [quantity, setQuantity] = useState(1)
+
   return (
     <MyContext.Provider
-      value={{ bag, setBag, children, quantity, setQuantity }}
+      value={{ bag, setBag, quantity, setQuantity }}
     >
       {children}
     </MyContext.Provider>

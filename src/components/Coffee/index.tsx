@@ -1,12 +1,12 @@
 import { ShoppingCart } from 'phosphor-react'
 import { Action, Aside, Container, Input, Price } from './styles'
-import { useContext } from 'react'
-import { Coffee } from '../CoffeBuyed'
-import { MyContext } from '../../contexts/MyContext'
+import { useContext, useState } from 'react'
+import { Coffee, MyContext } from '../../contexts/MyContext'
 
 export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   const { name, description, price, image } = coffee
-  const { bag, setBag, quantity, setQuantity } = useContext(MyContext)
+  const [quantity, setQuantity] = useState(1)
+  const { bag, setBag } = useContext(MyContext)
 
   const handleDecrement = () => {
     if (quantity > 1) {
@@ -18,8 +18,8 @@ export function CoffeeCard({ coffee }: { coffee: Coffee }) {
     setQuantity((prevQuantity) => prevQuantity + 1)
   }
 
-  function handleIncrementBag() {
-    setBag((prevBag: any) => [...prevBag, { coffee, quantity }])
+  function handleAddToBag() {
+    setBag((prevBag) => [...prevBag, { coffee, quantity }])
   }
 
   return (
@@ -46,7 +46,7 @@ export function CoffeeCard({ coffee }: { coffee: Coffee }) {
             />
             <button onClick={handleIncrement}>+</button>
           </Action>
-          <button onClick={handleIncrementBag}>
+          <button onClick={handleAddToBag}>
             <ShoppingCart />
           </button>
         </div>

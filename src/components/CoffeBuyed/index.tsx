@@ -4,16 +4,8 @@ import { Aside } from '../Coffee/styles'
 import { useContext } from 'react'
 import { MyContext } from '../../contexts/MyContext'
 
-export interface Coffee {
-  image: string | null
-  name: string | null
-  id?: number | null
-  price: number
-  description?: string | null
-}
-
 export function Coffeebuyed() {
-  const { bag, setBag} = useContext(MyContext)
+  const { bag, setBag, quantity } = useContext(MyContext)
   const { name, price, image } = bag
   console.log(bag)
   return (
@@ -26,7 +18,7 @@ export function Coffeebuyed() {
           <p>{name}</p>
           <div>
             <span>R$</span>
-            <strong>{quantity}</strong>
+            <strong>{price}</strong>
           </div>
         </div>
         <div>
