@@ -25,6 +25,19 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
   }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .trash-button {
+    width: 110px;
+    font-size: 16px;
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
+    margin: 0 5px 0 5px;
+  }
 
   input {
     background-color: ${(props) => props.theme['base-button']};
@@ -41,13 +54,14 @@ export const Container = styled.div`
 
   article {
     padding: 0 20px;
+
     div {
       display: flex;
       flex-direction: row;
     }
   }
 
-  img {
+  .imgBuyed {
     width: 50px;
     height: 50px;
     margin-top: 52px;

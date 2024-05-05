@@ -16,24 +16,24 @@ export function Coffeebuyed({ item }: { item: Coffee }) {
   return (
     <Container>
       <Aside>
-        <img src={cafe} alt={name} />
+        <img src={cafe} alt={name} className="imgBuyed" />
       </Aside>
       <article>
-        <p>Expresso Tradicional</p>
-        <div>
-          <button>-</button>
-          <input type="number" min="1" />
-          <button>+</button>
-          <div>
-            <button>
-              <Trash />
-              Remover
-            </button>
-          </div>
+        <div className="title">
+          <p>Expresso Tradicional</p>
           <div>
             <span>R$</span>
             <strong>9,90</strong>
           </div>
+        </div>
+        <div>
+          <button className="incDecButton">-</button>
+          <input type="number" min="1" />
+          <button className="incDecButton">+</button>
+          <button className="trash-button">
+            <Trash />
+            Remover
+          </button>
         </div>
       </article>
     </Container>
