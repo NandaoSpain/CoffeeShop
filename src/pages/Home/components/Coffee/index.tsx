@@ -1,13 +1,26 @@
 import { ShoppingCart } from 'phosphor-react'
 import { Action, Aside, Container, Input, Price } from './styles'
-import { useState } from 'react'
+import { ReactNode, createContext, useContext, useState } from 'react'
+import { Coffee } from '../../../Checkout/components/CoffeBuyed'
 
-export function CoffeeCard({ coffee }: any) {
-  const { name, description, price, image } = coffee
+export const MyContext = createContext({})
 
-  const [quantity, setQuantity] = useState(1)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+interface MyContextProviderProps {
+  children: ReactNode
+  bag: []
+  setBag: () => void
+}
+export function MyContextProvider({ children }: MyContextProviderProps) {
   const [bag, setBag] = useState<{ coffee: any; quantity: number }[]>([])
+  return (
+    <MyContext.Provider value={{ bag, setBag }}>{children}</MyContext.Provider>
+  )
+}
+
+export function CoffeeCard({ coffee }: { coffee: Coffee }) {
+  const { name, description, price, image } = coffee
+  const { bag, setBag } = useContext(MyContext)
+  const [quantity, setQuantity] = useState(1)
 
   const handleDecrement = () => {
     if (quantity > 1) {
@@ -20,9 +33,9 @@ export function CoffeeCard({ coffee }: any) {
   }
 
   function handleIncrementBag() {
-    setBag((prevBag) => [...prevBag, { coffee, quantity }])
-    console.log(quantity, coffee)
+    setBag((prevBag: any) => [...prevBag, { coffee, quantity }])
   }
+
   return (
     <Container>
       <Aside>

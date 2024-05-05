@@ -140,4 +140,38 @@ export const Bag = styled.div`
   width: 448px;
   min-height: 498px;
   border-radius: 6px 44px 6px 44px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  button {
+    width: 100%;
+    height: 51px;
+    border-radius: 6px;
+    border: none;
+    background: ${(props) => props.theme.yellow};
+    color: ${(props) => props.theme.white};
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: ${(props) => props.theme['yellow-dark']};
+    }
+  }
+`
+export const TotalPrice = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid rgba(120, 120, 120, 0.2);
+  padding: 30px 0;
+  line-height: 2.5;
+`
+
+export const BuyItems = styled.div`
+  
 `

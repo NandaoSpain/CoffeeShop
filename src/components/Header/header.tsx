@@ -2,18 +2,21 @@ import { HeaderContainer } from './styles'
 import Logo from '../../assets/Logo.svg'
 import Location from '../../assets/Location.svg'
 import Icon from '../../assets/Icon.svg'
+import { NavLink } from 'react-router-dom'
 
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={Logo} alt="" />
+      <NavLink to={'/'}>
+        <img src={Logo} alt="" />
+      </NavLink>
       <nav>
         <a>
           <img src={Location} alt="" />
         </a>
-        <a>
+        <NavLink to={"/Checkout"}>
           <img src={Icon} alt="" />
-        </a>
+        </NavLink>
       </nav>
     </HeaderContainer>
   )

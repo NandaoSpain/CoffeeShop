@@ -6,9 +6,21 @@ import {
   Money,
 } from 'phosphor-react'
 import { Header } from '../../components/Header/header'
-import { Container, Address, Payment, Bag } from './styles'
+import {
+  Container,
+  Address,
+  Payment,
+  Bag,
+  BuyItems,
+  TotalPrice,
+} from './styles'
+import { CoffeeBuyed, CoffeeCard, MyContext } from '../Home/components/Coffee'
+import { useContext } from 'react'
+import { Coffeebuyed } from './components/CoffeBuyed'
 
 export function Checkout() {
+  const { bag, setBag } = useContext(MyContext)
+  // console.log(bag)
   return (
     <div>
       <Header />
@@ -115,7 +127,26 @@ export function Checkout() {
         </div>
         <div>
           <h1>Cafés selecionados</h1>
-          <Bag />
+          <Bag>
+            <BuyItems>
+              {bag.map((coffee) => (
+                <Coffeebuyed key={coffee.id} coffee={coffee} />
+              ))}
+            </BuyItems>
+            <TotalPrice>
+              <div>
+                <p>Total de Itens</p>
+                <p>Entrega</p>
+                <h3>Total</h3>
+              </div>
+              <div>
+                <p>R$ 29,70</p>
+                <p>R$ 3,50</p>
+                <h3>R$ 33,20</h3>
+              </div>
+            </TotalPrice>
+            <button>Finalizar Pedido</button>
+          </Bag>
         </div>
       </Container>
     </div>
