@@ -172,6 +172,7 @@ export const TotalPrice = styled.div`
   line-height: 2.5;
 `
 
-export const BuyItems = styled.div`
-  
-`
+// export const BuyItems = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `

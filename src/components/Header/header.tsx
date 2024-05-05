@@ -14,7 +14,7 @@ export function Header() {
         <a>
           <img src={Location} alt="" />
         </a>
-        <NavLink to={"/Checkout"}>
+        <NavLink to={'/Checkout'}>
           <img src={Icon} alt="" />
         </NavLink>
       </nav>

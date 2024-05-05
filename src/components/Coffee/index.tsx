@@ -1,7 +1,7 @@
 import { ShoppingCart } from 'phosphor-react'
 import { Action, Aside, Container, Input, Price } from './styles'
 import { ReactNode, createContext, useContext, useState } from 'react'
-import { Coffee } from '../../../Checkout/components/CoffeBuyed'
+import { Coffee } from '../CoffeBuyed'
 
 export const MyContext = createContext({})
 

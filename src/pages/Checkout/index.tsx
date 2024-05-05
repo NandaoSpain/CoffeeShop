@@ -14,13 +14,13 @@ import {
   BuyItems,
   TotalPrice,
 } from './styles'
-import { CoffeeBuyed, CoffeeCard, MyContext } from '../Home/components/Coffee'
+import { MyContext } from '../../components/Coffee'
 import { useContext } from 'react'
-import { Coffeebuyed } from './components/CoffeBuyed'
-
+import { Coffeebuyed } from '../../components/CoffeBuyed'
+import { v4 as uuidv4 } from 'uuid'
 export function Checkout() {
   const { bag, setBag } = useContext(MyContext)
-  // console.log(bag)
+  //console.log(bag)
   return (
     <div>
       <Header />
@@ -128,11 +128,9 @@ export function Checkout() {
         <div>
           <h1>Cafés selecionados</h1>
           <Bag>
-            <BuyItems>
-              {bag.map((coffee) => (
-                <Coffeebuyed key={coffee.id} coffee={coffee} />
-              ))}
-            </BuyItems>
+            {bag.map((coffee) => (
+              <Coffeebuyed key={uuidv4()} item={coffee} />
+            ))}
             <TotalPrice>
               <div>
                 <p>Total de Itens</p>
