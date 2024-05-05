@@ -1,17 +1,21 @@
 import { Trash } from 'phosphor-react'
 import { Container } from './styles'
 import { Aside } from '../Coffee/styles'
+import { useContext } from 'react'
+import { MyContext } from '../../contexts/MyContext'
+
 export interface Coffee {
-  image: string
-  name: string
-  id?: number
+  image: string | null
+  name: string | null
+  id?: number | null
   price: number
-  description?: string
+  description?: string | null
 }
 
-export function Coffeebuyed({ item }: { item: Coffee }) {
-  const { image, name, price } = item
-  console.log(name)
+export function Coffeebuyed() {
+  const { bag, setBag} = useContext(MyContext)
+  const { name, price, image } = bag
+  console.log(bag)
   return (
     <Container>
       <Aside>
@@ -22,7 +26,7 @@ export function Coffeebuyed({ item }: { item: Coffee }) {
           <p>{name}</p>
           <div>
             <span>R$</span>
-            <strong>{price}</strong>
+            <strong>{quantity}</strong>
           </div>
         </div>
         <div>

@@ -1,9 +1,9 @@
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
-import { MyContextProvider } from './components/Coffee'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Router'
+import { MyContextProvider } from './contexts/MyContext'
 
 export function App() {
   return (

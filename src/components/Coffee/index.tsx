@@ -1,26 +1,12 @@
 import { ShoppingCart } from 'phosphor-react'
 import { Action, Aside, Container, Input, Price } from './styles'
-import { ReactNode, createContext, useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Coffee } from '../CoffeBuyed'
-
-export const MyContext = createContext({})
-
-interface MyContextProviderProps {
-  children: ReactNode
-  bag: []
-  setBag: () => void
-}
-export function MyContextProvider({ children }: MyContextProviderProps) {
-  const [bag, setBag] = useState<{ coffee: any; quantity: number }[]>([])
-  return (
-    <MyContext.Provider value={{ bag, setBag }}>{children}</MyContext.Provider>
-  )
-}
+import { MyContext } from '../../contexts/MyContext'
 
 export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   const { name, description, price, image } = coffee
-  const { bag, setBag } = useContext(MyContext)
-  const [quantity, setQuantity] = useState(1)
+  const { bag, setBag, quantity, setQuantity } = useContext(MyContext)
 
   const handleDecrement = () => {
     if (quantity > 1) {

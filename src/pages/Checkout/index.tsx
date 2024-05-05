@@ -7,13 +7,12 @@ import {
 } from 'phosphor-react'
 import { Header } from '../../components/Header/header'
 import { Container, Address, Payment, Bag, TotalPrice } from './styles'
-import { MyContext } from '../../components/Coffee'
 import { useContext } from 'react'
 import { Coffee, Coffeebuyed } from '../../components/CoffeBuyed'
 import { v4 as uuidv4 } from 'uuid'
+import { MyContext } from '../../contexts/MyContext'
 export function Checkout() {
   const { bag, setBag } = useContext(MyContext)
-  console.log(bag)
   return (
     <div>
       <Header />
@@ -121,8 +120,8 @@ export function Checkout() {
         <div>
           <h1>Cafés selecionados</h1>
           <Bag>
-            {bag.map((coffee: Coffee) => (
-              <Coffeebuyed key={uuidv4()} item={coffee} />
+            {bag.map((item: Coffee) => (
+              <Coffeebuyed key={uuidv4()} item={item} />
             ))}
             <TotalPrice>
               <div>
