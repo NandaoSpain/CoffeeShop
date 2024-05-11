@@ -13,32 +13,32 @@ export function Coffeebuyed({ item }: CoffeeBuyedProps) {
   const finalPrice = Number(item.quantity) * item.coffee.price
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const updatedBag = bag.map((coffee: { coffee: { id: any } }) => {
-      if (coffee.coffee.id === item.coffee.id) {
-        return { ...coffee, quantity: Number(event.target.value) }
+    const newQuantity = Number(event.target.value)
+    const updatedBag = bag.map((coffeeItem) => {
+      if (coffeeItem.coffee.id === item.coffee.id) {
+        return { ...coffeeItem, quantity: newQuantity }
       }
-      return coffee
+      return coffeeItem
     })
     setBag(updatedBag)
   }
 
   const handleDecrement = () => {
-    const updatedBag = bag.map((coffee: { coffee: { id: any }; quantity: number }) => {
-        if (coffee.coffee.id === item.coffee.id && coffee.quantity > 1) {
-          return { ...coffee, quantity: coffee.quantity - 1 }
-        }
-        return coffee
-      },
-    )
+    const updatedBag = bag.map((coffeeItem) => {
+      if (coffeeItem.coffee.id === item.coffee.id && coffeeItem.quantity > 1) {
+        return { ...coffeeItem, quantity: coffeeItem.quantity - 1 }
+      }
+      return coffeeItem
+    })
     setBag(updatedBag)
   }
 
   const handleIncrement = () => {
-    const updatedBag = bag.map((coffee) => {
-      if (coffee.coffee.id === item.coffee.id) {
-        return { ...coffee, quantity: coffee.quantity + 1 }
+    const updatedBag = bag.map((coffeeItem) => {
+      if (coffeeItem.coffee.id === item.coffee.id) {
+        return { ...coffeeItem, quantity: coffeeItem.quantity + 1 }
       }
-      return coffee
+      return coffeeItem
     })
     setBag(updatedBag)
   }

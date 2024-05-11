@@ -19,15 +19,24 @@ export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   }
 
   function handleAddToBag() {
+    if (!coffee || coffee.id === undefined) {
+      return
+    }
     const existingItemIndex = bag.findIndex(
       (item) => item.coffee.id === coffee.id,
     )
+
     if (existingItemIndex !== -1) {
       const updatedBag = [...bag]
       updatedBag[existingItemIndex].quantity += quantity
       setBag(updatedBag)
     } else {
-      setBag((prevBag: any) => [...prevBag, { coffee, quantity }])
+      const newItem: Coffee = {
+        ...coffee,
+        quantity,
+      }
+      const updatedBag = [...bag, newItem]
+      setBag(updatedBag)
     }
   }
 
