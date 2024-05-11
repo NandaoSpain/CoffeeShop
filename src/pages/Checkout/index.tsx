@@ -7,6 +7,8 @@ import {
 } from 'phosphor-react'
 import { Header } from '../../components/Header/header'
 import { Container, Address, Payment, Bag } from './styles'
+import { useContext } from 'react'
+import { MyContext } from '../../contexts/MyContext'
 
 export function Checkout() {
   const { bag } = useContext(MyContext)
