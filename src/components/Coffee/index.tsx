@@ -1,13 +1,12 @@
 import { ShoppingCart } from 'phosphor-react'
 import { Action, Aside, Container, Input, Price } from './styles'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Coffee, MyContext } from '../../contexts/MyContext'
 
-export function CoffeeCard({ coffee }: any) {
+export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   const { name, description, price, image } = coffee
-
   const [quantity, setQuantity] = useState(1)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [bag, setBag] = useState<{ coffee: any; quantity: number }[]>([])
+  const { bag, setBag } = useContext(MyContext)
 
   const handleDecrement = () => {
     if (quantity > 1) {
@@ -19,10 +18,21 @@ export function CoffeeCard({ coffee }: any) {
     setQuantity((prevQuantity) => prevQuantity + 1)
   }
 
-  function handleIncrementBag() {
-    setBag((prevBag) => [...prevBag, { coffee, quantity }])
-    console.log(quantity, coffee)
+  function handleAddToBag() {
+    const existingItemIndex = bag.findIndex(
+      (item) => item.coffee.id === coffee.id,
+    )
+
+    if (existingItemIndex !== -1) {
+      const updatedBag = [...bag]
+      updatedBag[existingItemIndex].quantity += quantity
+      setBag(updatedBag)
+    } else {
+      const newItem = { coffee, quantity }
+      setBag((prevBag: Coffee[]) => [...prevBag, newItem])
+    }
   }
+
   return (
     <Container>
       <Aside>
@@ -47,7 +57,7 @@ export function CoffeeCard({ coffee }: any) {
             />
             <button onClick={handleIncrement}>+</button>
           </Action>
-          <button onClick={handleIncrementBag}>
+          <button onClick={handleAddToBag}>
             <ShoppingCart />
           </button>
         </div>
