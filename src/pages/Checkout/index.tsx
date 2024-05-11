@@ -12,7 +12,7 @@ import { Coffeebuyed } from '../../components/CoffeBuyed'
 import { v4 as uuidv4 } from 'uuid'
 import { Coffee, MyContext } from '../../contexts/MyContext'
 export function Checkout() {
-  const { bag, setBag } = useContext(MyContext)
+  const { bag } = useContext(MyContext)
   console.log(bag)
   return (
     <div>

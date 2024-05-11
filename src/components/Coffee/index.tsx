@@ -6,7 +6,7 @@ import { Coffee, MyContext } from '../../contexts/MyContext'
 export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   const { name, description, price, image } = coffee
   const [quantity, setQuantity] = useState(1)
-  const { bag, setBag } = useContext(MyContext)
+  const { setBag } = useContext(MyContext)
 
   const handleDecrement = () => {
     if (quantity > 1) {
