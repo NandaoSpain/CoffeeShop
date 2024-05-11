@@ -6,7 +6,7 @@ import { Coffee, MyContext } from '../../contexts/MyContext'
 export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   const { name, description, price, image } = coffee
   const [quantity, setQuantity] = useState(1)
-  const { setBag } = useContext(MyContext)
+  const { bag, setBag } = useContext(MyContext)
 
   const handleDecrement = () => {
     if (quantity > 1) {
@@ -19,7 +19,16 @@ export function CoffeeCard({ coffee }: { coffee: Coffee }) {
   }
 
   function handleAddToBag() {
-    setBag((prevBag) => [...prevBag, { coffee, quantity }])
+    const existingItemIndex = bag.findIndex(
+      (item) => item.coffee.id === coffee.id,
+    )
+    if (existingItemIndex !== -1) {
+      const updatedBag = [...bag]
+      updatedBag[existingItemIndex].quantity += quantity
+      setBag(updatedBag)
+    } else {
+      setBag((prevBag: any) => [...prevBag, { coffee, quantity }])
+    }
   }
 
   return (

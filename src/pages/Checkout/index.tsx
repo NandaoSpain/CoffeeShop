@@ -9,11 +9,19 @@ import { Header } from '../../components/Header/header'
 import { Container, Address, Payment, Bag, TotalPrice } from './styles'
 import { useContext } from 'react'
 import { Coffeebuyed } from '../../components/CoffeBuyed'
-import { v4 as uuidv4 } from 'uuid'
 import { Coffee, MyContext } from '../../contexts/MyContext'
 export function Checkout() {
   const { bag } = useContext(MyContext)
-  console.log(bag)
+
+  const totalPrice: number =
+    bag.length > 0
+      ? bag.reduce((acc, item) => {
+          const price = item.coffee.price
+          const quantity = item.quantity
+          return acc + price * quantity
+        }, 0)
+      : 0
+
   return (
     <div>
       <Header />
@@ -122,7 +130,7 @@ export function Checkout() {
           <h1>Cafés selecionados</h1>
           <Bag>
             {bag.map((item: Coffee) => (
-              <Coffeebuyed key={uuidv4()} item={item} />
+              <Coffeebuyed key={item.id} item={item} />
             ))}
             <TotalPrice>
               <div>
@@ -131,9 +139,9 @@ export function Checkout() {
                 <h3>Total</h3>
               </div>
               <div>
-                <p>R$ 29,70</p>
+                <p>R$ {totalPrice.toFixed(2)}</p>
                 <p>R$ 3,50</p>
-                <h3>R$ 33,20</h3>
+                <h3>R$ {(totalPrice + 3.5).toFixed(2)}</h3>
               </div>
             </TotalPrice>
             <button>Finalizar Pedido</button>

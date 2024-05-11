@@ -1,11 +1,8 @@
 import { ReactNode, createContext, useState } from 'react'
 
 export interface Coffee {
-  quantity: string | number | readonly string[] | undefined
+  quantity: number
   coffee: any
-  map(
-    arg0: (item: Coffee) => import('react/jsx-runtime').JSX.Element,
-  ): ReactNode
   image: string
   name: string
   id?: number
@@ -31,7 +28,7 @@ export function MyContextProvider({ children }: MyContextProviderProps) {
   const [quantity, setQuantity] = useState(1)
 
   return (
-    <MyContext.Provider value={{ bag, setBag, quantity, setQuantity }}>
+    <MyContext.Provider value={{ bag, setBag, quantity, setQuantity } as any}>
       {children}
     </MyContext.Provider>
   )
