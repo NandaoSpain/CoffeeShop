@@ -34,6 +34,10 @@ export const Container = styled.div`
       width: 32px;
     }
   }
+  .shoppingbotton:hover {
+    background-color: ${(props) => props.theme.purple};
+    color: ${(props) => props.theme.white};
+  }
 
   button {
     background: ${(props) => props.theme['base-button']};
