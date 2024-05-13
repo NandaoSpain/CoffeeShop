@@ -57,7 +57,7 @@ export function CoffeeCard({ coffee }: { coffee: Coffee }) {
             />
             <button onClick={handleIncrement}>+</button>
           </Action>
-          <button onClick={handleAddToBag}>
+          <button onClick={handleAddToBag} className="shoppingbotton">
             <ShoppingCart />
           </button>
         </div>
